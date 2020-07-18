@@ -24,24 +24,34 @@ namespace WpfApp1.Controls
             Header = di.Name;
             MyDirectoryInfo = di;
 
-            List<DirectoryInfo> list2 = new List<DirectoryInfo>();
+            /*            List<DirectoryTreeViewItem> list = new List<DirectoryTreeViewItem>();
+
+                        foreach (DirectoryInfo dirInfo in di.GetDirectories())
+                        {
+                            list.Add(new DirectoryTreeViewItem(dirInfo));
+                        }
+                        this.ItemsSource = list;*/
+
+            List<DirectoryInfo> list = new List<DirectoryInfo>();
+
 
             foreach (DirectoryInfo dirInfo in di.GetDirectories())
             {
-                list2.Add(dirInfo);
+                list.Add(dirInfo);
             }
-            this.ItemsSource = list2;
+            this.ItemsSource = list;
         }
 
         protected override void OnExpanded(RoutedEventArgs e)
         {
-            List< DirectoryTreeViewItem> list3 = new List<DirectoryTreeViewItem>();
+            List<DirectoryTreeViewItem> list = new List<DirectoryTreeViewItem>();
 
             foreach (DirectoryInfo dir in MyDirectoryInfo.GetDirectories())
             {
-                list3.Add(new DirectoryTreeViewItem(dir));
+                list.Add(new DirectoryTreeViewItem(dir));
             }
-            this.ItemsSource = list3;
+            this.ItemsSource = list;
+
         }
 
         public DirectoryInfo GetDirectoryInfo()

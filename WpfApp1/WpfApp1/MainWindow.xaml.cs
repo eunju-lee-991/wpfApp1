@@ -31,7 +31,7 @@ namespace WpfApp1
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
 
-            DirectoryInfo root = new DirectoryInfo("C:\\Users\\이경민\\Documents\\카카오톡 받은 파일");
+            DirectoryInfo root = new DirectoryInfo(@"C:\Users\이경민\Documents\workspace-spring-tool-suite-4-4.7.0.RELEASE");
 
             List<DirectoryTreeViewItem> list = new List<DirectoryTreeViewItem>();
 
@@ -41,6 +41,11 @@ namespace WpfApp1
             }
 
             MyTreeView.ItemsSource = list;
+        }
+
+        private void selectItem(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+
         }
     }
 }

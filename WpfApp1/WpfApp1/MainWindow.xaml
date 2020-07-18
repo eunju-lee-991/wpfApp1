@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
 
 
-        <TreeView Grid.Column="0" x:Name="MyTreeView">
+        <TreeView Grid.Column="0" x:Name="MyTreeView" SelectedItemChanged="selectItem">
             
         </TreeView>
 
