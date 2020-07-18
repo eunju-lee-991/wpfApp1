@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -41,11 +42,39 @@ namespace WpfApp1
             }
 
             MyTreeView.ItemsSource = list;
+
+
+
+            
         }
 
         private void selectItem(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
+            TreeView tree = (TreeView)sender;
+            DirectoryTreeViewItem TreeItem = (DirectoryTreeViewItem)tree.SelectedItem;
 
+            List<string> list = new List<string>();
+
+            string path3 = TreeItem.GetDirectoryInfo().Name; 
+
+            Debug.WriteLine(System.IO.Path.GetFullPath(path3));
+
+            foreach (FileInfo fi in TreeItem.GetDirectoryInfo().GetFiles())
+            {
+                list.Add(fi.Name);
+            }
+
+            foreach (DirectoryInfo di in TreeItem.GetDirectoryInfo().GetDirectories())
+            {
+                list.Add(di.Name);
+            }
+
+             MyListBox.ItemsSource = list;
+        }
+
+        private void PathClicked(object sender, RoutedEventArgs e)
+        {
+            //클릭하면 버튼이 텍스트박스로...
         }
     }
 }

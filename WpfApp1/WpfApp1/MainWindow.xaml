@@ -11,18 +11,16 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions >
-            
-        </Grid.RowDefinitions>
+
 
 
         <TreeView Grid.Column="0" x:Name="MyTreeView" SelectedItemChanged="selectItem">
             
         </TreeView>
 
-        <StackPanel Grid.Column="1">
-            <TextBlock Height="25" Background="LightGray"/>
-            <ListBox  x:Name="MyListBox">
+        <StackPanel Grid.Column="1" VerticalAlignment="Top" >
+            <Button x:Name="PathBtn" Height="25" Background="LightBlue" Click="PathClicked"/>
+            <ListBox x:Name="MyListBox" Height="395">
             
             </ListBox>
         </StackPanel>

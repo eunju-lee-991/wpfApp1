@@ -32,14 +32,15 @@ namespace WpfApp1.Controls
                         }
                         this.ItemsSource = list;*/
 
-            List<DirectoryInfo> list = new List<DirectoryInfo>();
+            List<string> list = new List<string>();
 
 
             foreach (DirectoryInfo dirInfo in di.GetDirectories())
             {
-                list.Add(dirInfo);
+                list.Add(dirInfo.Name);
             }
             this.ItemsSource = list;
+            
         }
 
         protected override void OnExpanded(RoutedEventArgs e)
