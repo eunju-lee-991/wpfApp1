@@ -8,15 +8,23 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions >
+            
+        </Grid.RowDefinitions>
 
-        <TreeView>
+
+        <TreeView Grid.Column="0" x:Name="MyTreeView">
             
         </TreeView>
 
-        <ListBox>
+        <StackPanel Grid.Column="1">
+            <TextBlock Height="25" Background="LightGray"/>
+            <ListBox  x:FieldModifier="MyListBox">
             
-        </ListBox>
+            </ListBox>
+        </StackPanel>
     </Grid>
 </Window>
