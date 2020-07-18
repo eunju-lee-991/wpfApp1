@@ -74,7 +74,7 @@ namespace WpfApp1
 
         private void PathClicked(object sender, RoutedEventArgs e)
         {
-            //클릭하면 버튼이 텍스트박스로...
+            //클릭하면 버튼이 텍스트박스로.....
         }
     }
 }
