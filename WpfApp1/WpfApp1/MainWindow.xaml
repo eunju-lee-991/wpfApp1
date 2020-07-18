@@ -22,7 +22,7 @@
 
         <StackPanel Grid.Column="1">
             <TextBlock Height="25" Background="LightGray"/>
-            <ListBox  x:FieldModifier="MyListBox">
+            <ListBox  x:Name="MyListBox">
             
             </ListBox>
         </StackPanel>
